@@ -1,0 +1,51 @@
+<script type="text/x-red" data-template-name="compressor">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="my_Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="fa fa-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+	<div class="form-row">
+        <label for="node-input-minutes"><i class="fa fa-clock-o"></i> Minutes</label>
+        <input style="width:50px !important" type="text" id="node-input-minutes" placeholder="1">
+    </div>
+	<div class="form-row">
+        <label for="node-input-minmax"><i class="fa fa-pie-chart"></i> MinMax</label>
+        <input style="width:20px !important"type="checkbox" id="node-input-minmax" placeholder=false>
+	</div>
+	<div class="form-row">
+        <label for="node-input-sync"><i class="fa fa-tasks"></i> sync</label>
+        <input style="width:20px !important" type="checkbox" id="node-input-sync" placeholder=true>
+    </div>
+
+</script>
+
+<script type="text/x-red" data-help-name="compressor">
+    <p>Collect and calculate the average of incoming <code>msg.payload</code> values.</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType("compressor", {
+      category: "function",
+      defaults: {
+        name: {value:""},
+        minutes: {value: 1, required: true, validate:RED.validators.number() },
+		    sync: {value:false},
+		    minmax: {value:true},
+        topic: {value:""}
+      },
+      color:"#e2d96e",
+      inputs: 1,
+      outputs: 2,
+      //icon: "average.png",
+	  icon: "function.png",
+      label: function() {
+        return this.name || "compressor";
+      },
+      labelStyle: function() {
+        return this.name ? "node_label_italic" : "";
+      }
+    });
+</script>
