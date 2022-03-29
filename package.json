@@ -1,0 +1,24 @@
+{
+  "name": "node-red-contrib-compressor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "compressor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tischmi/node-red-contrib-compressor.git"
+  },
+  "author": "tischmi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tischmi/node-red-contrib-compressor/issues"
+  },
+  "homepage": "https://github.com/tischmi/node-red-contrib-compressor#readme",
+  "node-red" : {
+      "nodes": {
+           "compressor": "compressor.js"
+        }
+    }
+}
